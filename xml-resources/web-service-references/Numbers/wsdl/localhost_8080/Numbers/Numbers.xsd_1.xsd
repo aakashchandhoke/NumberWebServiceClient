@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://Numbers.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Numbers.com/">
+
+<xs:element name="RandomNumberRange" type="tns:RandomNumberRange"/>
+
+<xs:element name="RandomNumberRangeResponse" type="tns:RandomNumberRangeResponse"/>
+
+<xs:element name="composite" type="tns:composite"/>
+
+<xs:element name="compositeResponse" type="tns:compositeResponse"/>
+
+<xs:element name="evenRange" type="tns:evenRange"/>
+
+<xs:element name="evenRangeResponse" type="tns:evenRangeResponse"/>
+
+<xs:element name="fibonacciRange" type="tns:fibonacciRange"/>
+
+<xs:element name="fibonacciRangeResponse" type="tns:fibonacciRangeResponse"/>
+
+<xs:element name="oddRange" type="tns:oddRange"/>
+
+<xs:element name="oddRangeResponse" type="tns:oddRangeResponse"/>
+
+<xs:element name="palindromeRange" type="tns:palindromeRange"/>
+
+<xs:element name="palindromeRangeResponse" type="tns:palindromeRangeResponse"/>
+
+<xs:element name="perfectCubeRange" type="tns:perfectCubeRange"/>
+
+<xs:element name="perfectCubeRangeResponse" type="tns:perfectCubeRangeResponse"/>
+
+<xs:element name="perfectSquare" type="tns:perfectSquare"/>
+
+<xs:element name="perfectSquareResponse" type="tns:perfectSquareResponse"/>
+
+<xs:element name="powerOfTwoRange" type="tns:powerOfTwoRange"/>
+
+<xs:element name="powerOfTwoRangeResponse" type="tns:powerOfTwoRangeResponse"/>
+
+<xs:element name="prime" type="tns:prime"/>
+
+<xs:element name="primeResponse" type="tns:primeResponse"/>
+
+<xs:complexType name="prime">
+<xs:sequence>
+<xs:element name="low" type="xs:int"/>
+<xs:element name="high" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="primeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="evenRange">
+<xs:sequence>
+<xs:element name="low" type="xs:int"/>
+<xs:element name="high" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="evenRangeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="composite">
+<xs:sequence>
+<xs:element name="low" type="xs:int"/>
+<xs:element name="high" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="compositeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="perfectCubeRange">
+<xs:sequence>
+<xs:element name="low" type="xs:int"/>
+<xs:element name="high" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="perfectCubeRangeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RandomNumberRange">
+<xs:sequence>
+<xs:element name="low" type="xs:int"/>
+<xs:element name="high" type="xs:int"/>
+<xs:element name="n" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RandomNumberRangeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="perfectSquare">
+<xs:sequence>
+<xs:element name="low" type="xs:int"/>
+<xs:element name="high" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="perfectSquareResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="powerOfTwoRange">
+<xs:sequence>
+<xs:element name="low" type="xs:int"/>
+<xs:element name="high" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="powerOfTwoRangeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="palindromeRange">
+<xs:sequence>
+<xs:element name="low" type="xs:int"/>
+<xs:element name="high" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="palindromeRangeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fibonacciRange">
+<xs:sequence>
+<xs:element name="low" type="xs:int"/>
+<xs:element name="high" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fibonacciRangeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="oddRange">
+<xs:sequence>
+<xs:element name="low" type="xs:int"/>
+<xs:element name="high" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="oddRangeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
