@@ -40,7 +40,7 @@ public class NumberClient extends javax.swing.JFrame {
         b1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         ta1 = new javax.swing.JTextArea();
-        jLabel1 = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,6 +57,9 @@ public class NumberClient extends javax.swing.JFrame {
 
         l3.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         l3.setText("Number");
+        l3.setEnabled(false);
+
+        t3.setEnabled(false);
 
         cb1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Prime Number", "Palindrome Number", "Fibonacci Number", "Even Number", "Odd Number", "Random Number","Power of 2","Perfect Cube","Perfect Square","CompositeNumber" }));
         cb1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -65,11 +68,16 @@ public class NumberClient extends javax.swing.JFrame {
             }
         });
 
-        b1.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        b1.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         b1.setText("Generate");
         b1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 b1MouseClicked(evt);
+            }
+        });
+        b1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b1ActionPerformed(evt);
             }
         });
 
@@ -77,8 +85,11 @@ public class NumberClient extends javax.swing.JFrame {
         ta1.setRows(5);
         jScrollPane1.setViewportView(ta1);
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 8)); // NOI18N
-        jLabel1.setText("(Random No.)");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -89,28 +100,29 @@ public class NumberClient extends javax.swing.JFrame {
                 .addComponent(l1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(b1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cb1, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(b1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cb1, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(t1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(102, 102, 102)
-                                .addComponent(t2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
-                                .addComponent(t3, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(l4)
-                        .addGap(140, 140, 140)
-                        .addComponent(l2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(l3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(t2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(l4)
+                                .addGap(140, 140, 140)
+                                .addComponent(l2)))
+                        .addGap(110, 110, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(t3, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(l3)))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -118,24 +130,24 @@ public class NumberClient extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(l1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(l4)
-                    .addComponent(l2)
-                    .addComponent(l3))
+                .addGap(3, 3, 3)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(l4)
+                        .addComponent(l2)
+                        .addComponent(l3))
+                    .addComponent(jCheckBox1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addGap(4, 4, 4)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(t2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(t3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(b1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(b1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -214,62 +226,26 @@ public class NumberClient extends javax.swing.JFrame {
 
     private void cb1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cb1MouseClicked
         // TODO add your handling code here:
-        /*String text=cb1.getSelectedItem().toString();
-        if(text.equals("Prime Number"))
-        {
-            t3.setVisible(false);
-            l3.setVisible(false);
-        }
-        else if(text.equals("Palindrome Number"))
-        {
-            t3.setVisible(false);
-            l3.setVisible(false);
-        }
-        else if(text.equals("CompositeNumber"))
-        {
-            t3.setVisible(false);
-            l3.setVisible(false);
-        }
-        else if(text.equals("Fibonacci Number"))
-        {
-            t3.setVisible(false);
-            l3.setVisible(false);
-        }
-        else if(text.equals("Even Number"))
-        {
-            t3.setVisible(false);
-            l3.setVisible(false);
-        }
-        else if(text.equals("Odd Number"))
-        {
-            t3.setVisible(false);
-            l3.setVisible(false);
-        }
-        else if(text.equals("Random Number"))
-        {
-            if(t3.isVisible())
-            {
-                t3.setVisible(true);
-                l3.setVisible(true);
-            }
-            
-        }
-        else if(text.equals("Power of 2"))
-        {
-            t3.setVisible(false);
-            l3.setVisible(false);
-        }
-        else if(text.equals("Perfect Cube"))
-        {
-            t3.setVisible(false);
-            l3.setVisible(false);
-        }
-        else if(text.equals("Perfect Square"))
-        {
-            t3.setVisible(false);
-            l3.setVisible(false);
-        }*/
+        
     }//GEN-LAST:event_cb1MouseClicked
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+        if(t3.isEnabled() && l3.isEnabled())
+        {
+            l3.setEnabled(false);
+            t3.setEnabled(false);
+        }
+        else
+        {
+            l3.setEnabled(true);
+            t3.setEnabled(true);
+        }
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -304,7 +280,7 @@ public class NumberClient extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b1;
     private javax.swing.JComboBox cb1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private java.awt.Label l1;
@@ -316,7 +292,7 @@ public class NumberClient extends javax.swing.JFrame {
     private javax.swing.JTextField t3;
     private javax.swing.JTextArea ta1;
     // End of variables declaration//GEN-END:variables
-
+    
     private static String randomNumberRange(int low, int high, int n) {
         number_client.Numbers_Service service = new number_client.Numbers_Service();
         number_client.Numbers port = service.getNumbersPort();
